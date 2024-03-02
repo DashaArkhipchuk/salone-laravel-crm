@@ -34,10 +34,10 @@
 
         <!-- Add other filter selects here -->
 
-        <div class="col-md-3 mt-3">
+        <div class="col-md-3 mt-4">
             <button type="submit" class="btn btn-primary">Apply Filters</button>
         </div>
-        <div class="col-md-3 mt-3">
+        <div class="col-md-3 mt-4">
             <a href="{{ route('salone.index') }}" class="btn btn-secondary">Reset Filters</a>
         </div>
     </div>

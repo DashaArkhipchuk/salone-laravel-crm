@@ -6,6 +6,10 @@
  <div class="m-5">
      <h1>Appointments</h1>
 
+     @if($layout == 'layouts.app'||$layout=='layouts.manager'||$layout=='layouts.customer')
+     <a href="{{ route('appointment.create') }}" class="btn btn-primary mb-3">Create Appointment</a>
+     @endif
+
      <form action="{{ route('appointment.index') }}" method="get" class="mb-3">
          @csrf
          <div class="row">
@@ -64,19 +68,14 @@
                  <input type="date" name="end_date" class="form-control" value="{{ $end_date }}">
              </div>
 
-             <div class="col-md-3 mt-3">
+             <div class="col-md-3 mt-4">
                  <button type="submit" class="btn btn-primary">Apply Filters</button>
              </div>
-             <div class="col-md-3 mt-3">
+             <div class="col-md-3 mt-4">
                  <a href="{{ route('appointment.index') }}" class="btn btn-secondary">Reset Filters</a>
              </div>
          </div>
      </form>
-
-     <!-- Rest of your table and appointment display code -->
-
-
-     <a href="{{ route('appointment.create') }}" class="btn btn-primary mb-3">Create Appointment</a>
 
      <table class="table">
          <thead>

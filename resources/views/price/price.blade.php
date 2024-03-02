@@ -53,11 +53,11 @@
     <input type="text" name="value_to" class="form-control" value="{{ $value_to }}">
 </div>
 
-                <div class="col-md-3 mt-3">
+                <div class="col-md-3 mt-4">
                     <button type="submit" class="btn btn-primary">Apply Filters</button>
                 </div>
 
-                <div class="col-md-3 mt-3">
+                <div class="col-md-3 mt-4">
                     <a href="{{ route('price.index') }}" class="btn btn-secondary">Reset Filters</a>
                 </div>
             </div>
