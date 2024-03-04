@@ -6908,7 +6908,7 @@ flexibility(document.documentElement);
                                                         <div class="elementor-widget-container">
                                                             <div class="elementor-button-wrapper">
                                                                 <a class="elementor-button elementor-button-link elementor-size-sm"
-                                                                    href="#">
+                                                                    href="/login">
                                                                     <span class="elementor-button-content-wrapper">
                                                                         <span class="elementor-button-text">Book Your
                                                                             Place</span>
@@ -7538,7 +7538,7 @@ flexibility(document.documentElement);
                                                         <div class="elementor-widget-container">
                                                             <div class="elementor-button-wrapper">
                                                                 <a class="elementor-button elementor-button-link elementor-size-sm"
-                                                                    href="#">
+                                                                    href="/login">
                                                                     <span class="elementor-button-content-wrapper">
                                                                         <span class="elementor-button-text">Book
                                                                             Now</span>
@@ -7674,7 +7674,7 @@ flexibility(document.documentElement);
                                                                         <div class="elementor-widget-container">
                                                                             <div class="elementor-button-wrapper">
                                                                                 <a class="elementor-button elementor-button-link elementor-size-sm"
-                                                                                    href="#">
+                                                                                    href="/salons">
                                                                                     <span
                                                                                         class="elementor-button-content-wrapper">
                                                                                         <span
@@ -7852,7 +7852,7 @@ flexibility(document.documentElement);
                                                         <div class="elementor-widget-container">
                                                             <div class="elementor-button-wrapper">
                                                                 <a class="elementor-button elementor-button-link elementor-size-sm"
-                                                                    href="#">
+                                                                    href="/reviews">
                                                                     <span class="elementor-button-content-wrapper">
                                                                         <span class="elementor-button-text">Read All
                                                                             Reviews</span>

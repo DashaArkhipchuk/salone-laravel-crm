@@ -5755,7 +5755,7 @@ flexibility(document.documentElement);
                                                                         <div class="elementor-element elementor-element-d2e8284 elementor-align-left elementor-tablet-align-left elementor-widget elementor-widget-button" data-id="d2e8284" data-element_type="widget" data-widget_type="button.default">
                                                                             <div class="elementor-widget-container">
                                                                                 <div class="elementor-button-wrapper">
-                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="#">
+                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="/login">
                                                                                         <span class="elementor-button-content-wrapper">
                                                                                             <span class="elementor-button-text">Book Now</span>
                                                                                         </span>
@@ -5801,7 +5801,7 @@ flexibility(document.documentElement);
                                                                         <div class="elementor-element elementor-element-595abb0 elementor-align-left elementor-tablet-align-left elementor-widget elementor-widget-button" data-id="595abb0" data-element_type="widget" data-widget_type="button.default">
                                                                             <div class="elementor-widget-container">
                                                                                 <div class="elementor-button-wrapper">
-                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="#">
+                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="/login">
                                                                                         <span class="elementor-button-content-wrapper">
                                                                                             <span class="elementor-button-text">Book Now</span>
                                                                                         </span>
@@ -5847,7 +5847,7 @@ flexibility(document.documentElement);
                                                                         <div class="elementor-element elementor-element-68195f4 elementor-align-left elementor-tablet-align-left elementor-widget elementor-widget-button" data-id="68195f4" data-element_type="widget" data-widget_type="button.default">
                                                                             <div class="elementor-widget-container">
                                                                                 <div class="elementor-button-wrapper">
-                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="#">
+                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="/login">
                                                                                         <span class="elementor-button-content-wrapper">
                                                                                             <span class="elementor-button-text">Book Now</span>
                                                                                         </span>
@@ -5897,7 +5897,7 @@ flexibility(document.documentElement);
                                                                         <div class="elementor-element elementor-element-ccf71f1 elementor-align-left elementor-tablet-align-left elementor-widget elementor-widget-button" data-id="ccf71f1" data-element_type="widget" data-widget_type="button.default">
                                                                             <div class="elementor-widget-container">
                                                                                 <div class="elementor-button-wrapper">
-                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="#">
+                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="/login">
                                                                                         <span class="elementor-button-content-wrapper">
                                                                                             <span class="elementor-button-text">Book Now</span>
                                                                                         </span>
@@ -5943,7 +5943,7 @@ flexibility(document.documentElement);
                                                                         <div class="elementor-element elementor-element-d02f878 elementor-align-left elementor-tablet-align-left elementor-widget elementor-widget-button" data-id="d02f878" data-element_type="widget" data-widget_type="button.default">
                                                                             <div class="elementor-widget-container">
                                                                                 <div class="elementor-button-wrapper">
-                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="#">
+                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="/login">
                                                                                         <span class="elementor-button-content-wrapper">
                                                                                             <span class="elementor-button-text">Book Now</span>
                                                                                         </span>
@@ -5989,7 +5989,7 @@ flexibility(document.documentElement);
                                                                         <div class="elementor-element elementor-element-35a9d2e elementor-align-left elementor-tablet-align-left elementor-widget elementor-widget-button" data-id="35a9d2e" data-element_type="widget" data-widget_type="button.default">
                                                                             <div class="elementor-widget-container">
                                                                                 <div class="elementor-button-wrapper">
-                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="#">
+                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="/login">
                                                                                         <span class="elementor-button-content-wrapper">
                                                                                             <span class="elementor-button-text">Book Now</span>
                                                                                         </span>
@@ -6035,7 +6035,7 @@ flexibility(document.documentElement);
                                                                         <div class="elementor-element elementor-element-2a7e4bb elementor-align-left elementor-tablet-align-left elementor-widget elementor-widget-button" data-id="2a7e4bb" data-element_type="widget" data-widget_type="button.default">
                                                                             <div class="elementor-widget-container">
                                                                                 <div class="elementor-button-wrapper">
-                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="#">
+                                                                                    <a class="elementor-button elementor-button-link elementor-size-sm" href="/login">
                                                                                         <span class="elementor-button-content-wrapper">
                                                                                             <span class="elementor-button-text">Book Now</span>
                                                                                         </span>
