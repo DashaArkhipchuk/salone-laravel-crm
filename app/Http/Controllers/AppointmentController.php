@@ -176,7 +176,6 @@ class AppointmentController extends Controller
         } else {
             $customers = Customer::all();
         }
-        $services = Service::all();
         $stylists = Stylist::all();
         $salons = Salone::all();
 
@@ -189,7 +188,7 @@ class AppointmentController extends Controller
             ->orWhere('id', $appointment->schedule_id) // Include the current schedule of the appointment
             ->get();
 
-        return view('appointment.edit', compact('appointment', 'customers', 'services', 'stylists', 'salons', 'availableSchedules', 'layout'));
+        return view('appointment.edit', compact('appointment', 'customers', 'stylists', 'salons', 'availableSchedules', 'layout'));
     }
 
     public function update(Request $request, $id)

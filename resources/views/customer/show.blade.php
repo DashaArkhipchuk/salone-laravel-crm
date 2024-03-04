@@ -19,11 +19,13 @@
         <div class="mt-3">
             <a href="{{ route('customer.edit', $customer->id) }}" class="btn btn-warning">Edit Customer</a>
 
+            @if($layout=='layouts.app')
             <form action="{{ route('customer.destroy', $customer->id) }}" method="post" style="display: inline-block;">
                 @csrf
                 @method('delete')
                 <button type="submit" class="btn btn-danger">Delete Customer</button>
             </form>
+            @endif
         </div>
     </div>
 @endsection

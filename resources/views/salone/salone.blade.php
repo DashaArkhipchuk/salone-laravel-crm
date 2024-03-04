@@ -22,6 +22,7 @@
             </select>
         </div>
 
+        @if($layout != 'layouts.stylist')
         <div class="col-md-3">
             <label for="stylist_id">Stylist:</label>
             <select name="stylist_id" class="form-control">
@@ -31,6 +32,7 @@
                 @endforeach
             </select>
         </div>
+        @endif
 
         <!-- Add other filter selects here -->
 

@@ -11,10 +11,10 @@
         @method('put')
 
         @php
-        $appointmentId = Route::current()->parameter('id');
+$appointmentId = Route::current()->parameter('id');
         @endphp
 
-        @if($layout=='layouts.customer')
+        @if($layout == 'layouts.customer')
         <div class="mb-3" hidden>
             <label for="customer_id" class="form-label">Customer</label>
             <select id="customer_id" name="customer_id" class="form-control" required>
@@ -22,7 +22,7 @@
             </select>
         </div>
         @endif
-        @if($layout!='layouts.customer')
+        @if($layout != 'layouts.customer')
         <div class="mb-3">
             <label for="customer_id" class="form-label">Customer</label>
             <select id="customer_id" name="customer_id" class="form-control" required>
@@ -34,23 +34,14 @@
         </div>
         @endif
 
-        <div class="mb-3">
-            <label for="service_id" class="form-label">Service</label>
-            <select id="service_id" name="service_id" class="form-control" required>
-                @foreach($services as $service)
-                <option value="{{ $service->id }}" {{ $service->id == $appointment->service_id ? 'selected' : '' }}>{{
-                    $service->name }}</option>
-                @endforeach
-            </select>
-        </div>
-
+        
         <div class="mb-3">
             <label for="salone_id" class="form-label">Salon</label>
             <select id="salon_id" name="salon_id" class="form-control" required>
                 <option value="" selected disabled>Select a salon</option>
                 @foreach($salons as $salon)
                 <option value="{{ $salon->id }}" {{ $salon->id == $appointment->salon_id ? 'selected' : '' }}>{{
-                    $salon->name }}</option>
+        $salon->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -59,13 +50,19 @@
             <label for="stylist_id" class="form-label">Stylist</label>
             <select id="stylist_id" name="stylist_id" class="form-control" required>
 
-            </select>
-        </div>
+                </select>
+            </div>
+            
+            
+            <div class="mb-3">
+                <label for="service_id" class="form-label">Service</label>
+                <select id="service_id" name="service_id" class="form-control" required>
 
-
-
-        <div class="mb-3">
-            <label for="schedule_id" class="form-label">Schedule</label>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="schedule_id" class="form-label">Schedule</label>
             <select id="schedule_id" name="schedule_id" class="form-control" required>
 
             </select>
@@ -161,6 +158,7 @@
 
 
         document.getElementById('stylist_id').addEventListener('change', function () {
+            fetchAvailableServices();
             fetchAvailableSchedules();
             console.log('updated');
         });
@@ -170,6 +168,50 @@
             fetchAvailableSchedules();
             console.log('updated');
         });
+
+        function fetchAvailableServices() {
+    var stylistId = document.getElementById('stylist_id').value;
+    console.log('stylistId for services: ' + stylistId);
+
+    if (stylistId === "") {
+        console.warn('Stylist not selected. Cannot fetch services without a selected stylist.');
+        return;
+    }
+
+    // Use fetch to make an AJAX request
+    fetch('/get-available-services/' + stylistId, {
+        method: 'GET'
+    })
+        .then(response => response.json())
+        .then(data => {
+            // Update the services dropdown with the fetched data
+            var servicesDropdown = document.getElementById('service_id');
+            servicesDropdown.innerHTML = ''; // Clear existing options
+
+            var defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.text = 'Select Service';
+            defaultOption.selected = true;
+            servicesDropdown.appendChild(defaultOption);
+
+            data.forEach(function (service) {
+                var option = document.createElement('option');
+                option.text = service.name;
+                option.value = service.id;
+                servicesDropdown.appendChild(option);
+            });
+
+            if (data.length == 0) {
+                        var option = document.createElement('option');
+                        option.value = '';
+                        option.text = 'No available services for selected stylist';
+                        schedulesDropdown.appendChild(option);
+                    }
+        })
+        .catch(error => {
+            console.error('Error fetching services:', error);
+        });
+}
 
         function fetchAvailableStylists(this_stylist_id = 0) {
             var salonId = document.getElementById('salon_id').value;
@@ -253,6 +295,7 @@
 
         // Initial fetch when the page loads
         fetchAvailableStylists();
+        fetchAvailableServices();
         fetchAvailableSchedules();
     </script>
 </div>

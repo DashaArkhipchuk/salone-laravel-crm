@@ -19,6 +19,8 @@ class SaloneController extends Controller
             $layout = 'layouts.manager';
         } else if ($userRole == 3) {
             $layout = 'layouts.stylist';
+        } else if ($userRole == 4) {
+            $layout = 'layouts.customer';
         }
         return $layout;
     }

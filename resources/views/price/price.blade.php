@@ -45,12 +45,12 @@
 
                 <div class="col-md-3">
     <label for="value_from">Value From:</label>
-    <input type="text" name="value_from" class="form-control" value="{{ $value_from }}">
+    <input type="number" step="0.01" name="value_from" class="form-control" value="{{ $value_from }}">
 </div>
 
 <div class="col-md-3">
     <label for="value_to">Value To:</label>
-    <input type="text" name="value_to" class="form-control" value="{{ $value_to }}">
+    <input type="number" step="0.01" name="value_to" class="form-control" value="{{ $value_to }}">
 </div>
 
                 <div class="col-md-3 mt-4">
