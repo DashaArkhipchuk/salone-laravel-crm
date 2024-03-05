@@ -137,10 +137,8 @@ class ScheduleController extends Controller
         $userRole = Auth::user()->role_id;
         $layout = $this->getUserLayout($userRole);
         $schedule = Schedule::findOrFail($id);
-        $salon = Salone::find($schedule->salon_id);
-        $stylist = Stylist::find($schedule->stylist_id);
 
-        return view('schedule.show', ['schedule' => $schedule, 'salon' => $salon, 'stylist' => $stylist, 'layout' => $layout]);
+        return view('schedule.show', ['schedule' => $schedule, 'layout' => $layout]);
     }
 
     public function edit($id)

@@ -52,7 +52,7 @@ public function show($id)
 
 public function edit($id)
 {
-    $salons = Salone::pluck('name', 'id');
+    $salons=Salone::All();
     $address = Address::find($id);
     return view('address.edit', ['address' => $address, 'salons' => $salons]);
 }

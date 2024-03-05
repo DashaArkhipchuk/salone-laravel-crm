@@ -80,6 +80,7 @@ $appointmentId = Route::current()->parameter('id');
         console.log(appointmentId);
 
         function resetValues() {
+            
             fetch('/get-appointment-details/' + appointmentId, {
                 method: 'GET'
             })
@@ -173,8 +174,12 @@ $appointmentId = Route::current()->parameter('id');
     var stylistId = document.getElementById('stylist_id').value;
     console.log('stylistId for services: ' + stylistId);
 
+    var servicesDropdown = document.getElementById('service_id');
     if (stylistId === "") {
-        console.warn('Stylist not selected. Cannot fetch services without a selected stylist.');
+        var option = document.createElement('option');
+                option.value = '';
+                option.text = 'Select Service';
+                servicesDropdown.appendChild(option);
         return;
     }
 
@@ -185,7 +190,6 @@ $appointmentId = Route::current()->parameter('id');
         .then(response => response.json())
         .then(data => {
             // Update the services dropdown with the fetched data
-            var servicesDropdown = document.getElementById('service_id');
             servicesDropdown.innerHTML = ''; // Clear existing options
 
             var defaultOption = document.createElement('option');
@@ -202,11 +206,11 @@ $appointmentId = Route::current()->parameter('id');
             });
 
             if (data.length == 0) {
-                        var option = document.createElement('option');
-                        option.value = '';
-                        option.text = 'No available services for selected stylist';
-                        schedulesDropdown.appendChild(option);
-                    }
+                var option = document.createElement('option');
+                option.value = '';
+                option.text = 'No available services for selected stylist';
+                servicesDropdown.appendChild(option);
+            }
         })
         .catch(error => {
             console.error('Error fetching services:', error);

@@ -11,8 +11,8 @@
             <label for="salo_id">Salon:</label>
             <select id="salon_id" name="salon_id" class="form-control">
                 <option value="" selected disabled>Select Salon</option>
-                @foreach($salons as $id => $name)
-                <option value="{{ $id }}" {{ $address->salone_id == $id ? 'selected' : '' }}>{{ $name }}</option>
+                @foreach($salons as $salon)
+                <option value="{{ $salon->id }}" {{ $address->salon_id == $salon->id ? 'selected' : '' }}>{{ $salon->name }}</option>
                 @endforeach
             </select>
         </div>

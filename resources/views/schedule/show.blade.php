@@ -9,8 +9,8 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Schedule Information</h5>
-                <p><strong>Salon:</strong> {{ $salon->name }}</p>
-                <p><strong>Stylist:</strong> {{ $stylist->first_name}} {{ $stylist->last_name }}</p>
+                <p><strong>Salon:</strong> {{ $schedule->salon->name }}</p>
+                <p><strong>Stylist:</strong> {{ $schedule->stylist->first_name}} {{ $schedule->stylist->last_name }}</p>
                 <p><strong>Date:</strong> {{ $schedule->date }}</p>
                 <p><strong>Start Hour:</strong> {{ $schedule->start_hour }}</p>
                 <p><strong>End Hour:</strong> {{ $schedule->end_hour }}</p>

@@ -75,17 +75,9 @@ class PaymentController extends Controller
         $userRole = Auth::user()->role_id;
         $layout = $this->getUserLayout($userRole);
         $payment = Payment::find($id);
-        $customer = Customer::find($payment->customer_id);
-        $stylist = Stylist::find($payment->stylist_id);
-        $service = Service::find($payment->service_id);
-        $currency = Currency::find($payment->currency_id);
 
         return view('payment.show', [
             'payment' => $payment,
-            'customer' => $customer,
-            'stylist' => $stylist,
-            'service' => $service,
-            'currency' => $currency,
             'layout' => $layout
         ]);
     }

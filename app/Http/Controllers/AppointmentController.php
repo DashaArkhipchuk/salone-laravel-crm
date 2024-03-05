@@ -127,12 +127,11 @@ class AppointmentController extends Controller
         } else {
             $customers = Customer::all();
         }
-        $services = Service::all();
         $salons = Salone::all();
-        $existingAppointments = Appointment::pluck('schedule_id')->all();
-        $availableSchedules = Schedule::whereNotIn('id', $existingAppointments)->get();
+        // $existingAppointments = Appointment::pluck('schedule_id')->all();
+        // $availableSchedules = Schedule::whereNotIn('id', $existingAppointments)->get();
 
-        return view('appointment.create', compact('customers', 'services', 'salons', 'availableSchedules', 'layout'));
+        return view('appointment.create', compact('customers', 'salons', 'layout'));
     }
 
     public function store(Request $request)
@@ -157,13 +156,9 @@ class AppointmentController extends Controller
         $userRole = Auth::user()->role_id;
         $layout = $this->getUserLayout($userRole);
         $appointment = Appointment::findOrFail($id);
-        $customer = Customer::find($appointment->customer_id);
-        $service = Service::find($appointment->service_id);
-        $stylist = Stylist::find($appointment->stylist_id);
-        $salon = Salone::find($appointment->salon_id);
-        $schedule = Schedule::find($appointment->schedule_id);
+        
 
-        return view('appointment.show', ['appointment' => $appointment, 'customer' => $customer, 'service' => $service, 'stylist' => $stylist, 'salon' => $salon, 'schedule' => $schedule, 'layout' => $layout]);
+        return view('appointment.show', ['appointment' => $appointment, 'layout' => $layout]);
     }
 
     public function edit($id)
@@ -176,19 +171,18 @@ class AppointmentController extends Controller
         } else {
             $customers = Customer::all();
         }
-        $stylists = Stylist::all();
         $salons = Salone::all();
 
         // Get all existing appointments
-        $existingAppointments = Appointment::where('customer_id', $appointment->customer_id)
-            ->pluck('schedule_id')->all();
+        // $existingAppointments = Appointment::where('customer_id', $appointment->customer_id)
+        //     ->pluck('schedule_id')->all();
 
         // Get schedules that are not taken (i.e., not in existing appointments)
-        $availableSchedules = Schedule::whereNotIn('id', $existingAppointments)
-            ->orWhere('id', $appointment->schedule_id) // Include the current schedule of the appointment
-            ->get();
+        // $availableSchedules = Schedule::whereNotIn('id', $existingAppointments)
+        //     ->orWhere('id', $appointment->schedule_id) // Include the current schedule of the appointment
+        //     ->get();
 
-        return view('appointment.edit', compact('appointment', 'customers', 'stylists', 'salons', 'availableSchedules', 'layout'));
+        return view('appointment.edit', compact('appointment', 'customers', 'salons', 'layout'));
     }
 
     public function update(Request $request, $id)

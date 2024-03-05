@@ -9,11 +9,11 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Payment Information</h5>
-                <p><strong>Customer:</strong> {{ $customer->first_name }} {{ $customer->last_name }}</p>
-                <p><strong>Stylist:</strong> {{ $stylist->first_name }} {{ $stylist->last_name }}</p>
-                <p><strong>Service:</strong> {{ $service->name }}</p>
+                <p><strong>Customer:</strong> {{ $payment->customer->first_name }} {{ $payment->customer->last_name }}</p>
+                <p><strong>Stylist:</strong> {{ $payment->stylist->first_name }} {{ $payment->stylist->last_name }}</p>
+                <p><strong>Service:</strong> {{ $payment->service->name }}</p>
                 <p><strong>Value:</strong> {{ $payment->value }}</p>
-                <p><strong>Currency:</strong> {{ $currency->code }}</p>
+                <p><strong>Currency:</strong> {{ $payment->currency->name }}</p>
             </div>
         </div>
 

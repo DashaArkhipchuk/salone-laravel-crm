@@ -134,7 +134,7 @@ class SaloneController extends Controller
             //dd('here');
             // If it has a salon association, display an error message
             $salon->delete(); // Rollback the salon creation
-            return redirect()->back()->with('error', 'Address is already associated with a salon. Please choose a different address or delete the existing association before creating a new one.');
+            return redirect()->back();//->with('error', 'Address is already associated with a salon. Please choose a different address or delete the existing association before creating a new one.');
         }
         //dd($address);
         //dd($salon);
@@ -155,23 +155,14 @@ class SaloneController extends Controller
             $salon->salonStylist()->attach($selectedStylists);
         }
 
-
-        // Redirect or perform other actions after successful submission
         return redirect()->route('salone.index');
     }
 
     public function show(string $id)
     {
+        
         $userRole = Auth::user()->role_id;
-        if ($userRole == 1) {
-            $layout = 'layouts.app';
-        } else if ($userRole == 2) {
-            $layout = 'layouts.manager';
-        } else if ($userRole == 3) {
-            $layout = 'layouts.stylist';
-        } else if ($userRole == 4) {
-            $layout = 'layouts.customer';
-        }
+        $layout=$this->getUserLayout($userRole);
         $salone = Salone::find($id);
         return view('salone.show', ['salone' => $salone, 'layout' => $layout]);
     }
@@ -183,12 +174,7 @@ class SaloneController extends Controller
     {
 
         $userRole = Auth::user()->role_id;
-        if ($userRole == 1) {
-            $layout = 'layouts.app';
-        } else if ($userRole == 2) {
-            $layout = 'layouts.manager';
-        }
-
+        $layout=$this->getUserLayout($userRole);
         $salone = Salone::find($id);
 
         $allManagers = Manager::all();
@@ -242,7 +228,7 @@ class SaloneController extends Controller
         $selectedStylists = $request->input('stylists', []);
         $salon->salonStylist()->sync($selectedStylists);
 
-        return redirect()->route('salone.index')->with('success', 'Salon and address updated successfully!');
+        return redirect()->route('salone.index');
     }
 
     /**
@@ -265,8 +251,8 @@ class SaloneController extends Controller
 
     public function getSalonsFrontPage()
     {
-
-        $salons = Salone::all()->take(7);
+        $count=7;
+        $salons = Salone::all()->take($count);
         return view('salons', compact('salons'));
     }
 

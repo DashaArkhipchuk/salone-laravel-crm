@@ -9,11 +9,11 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Appointment Information</h5>
-                <p><strong>Customer:</strong> {{ $customer->first_name}} {{$customer->last_name}}</p>
-                <p><strong>Service:</strong> {{ $service->name }}</p>
-                <p><strong>Stylist:</strong> {{ $stylist->first_name}} {{$stylist->last_name}}</p>
-                <p><strong>Salon:</strong> {{ $salon->name }}</p>
-                <p><strong>Schedule:</strong> {{ $schedule->date }} {{$schedule->start_hour}}-{{$schedule->end_hour}}</p>
+                <p><strong>Customer:</strong> {{ $appointment->customer->first_name}} {{$appointment->customer->last_name}}</p>
+                <p><strong>Service:</strong> {{ $appointment->service->name }}</p>
+                <p><strong>Stylist:</strong> {{ $appointment->stylist->first_name}} {{$appointment->stylist->last_name}}</p>
+                <p><strong>Salon:</strong> {{ $appointment->salon->name }}</p>
+                <p><strong>Schedule:</strong> {{ $appointment->schedule->date }} {{$appointment->schedule->start_hour}}-{{$appointment->schedule->end_hour}}</p>
             </div>
         </div>
 
